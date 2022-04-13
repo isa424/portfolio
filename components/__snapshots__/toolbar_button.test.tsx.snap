@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`toolbar button should render correctly when hovered 1`] = `
+<div>
+  <button
+    class="group rounded-full h-3 w-3 bg-yellow-400 hover:bg-yellow-500 focus:outline-none cursor-default flex items-center justify-center ring-1 ring-black/10 ring-inset"
+    role="button"
+  >
+    <div
+      class="rounded-full bg-yellow-400 group-hover:bg-yellow-700 h-1 w-1"
+    />
+  </button>
+</div>
+`;
+
+exports[`toolbar button should render successfully 1`] = `
+<div>
+  <button
+    class="group rounded-full h-3 w-3 bg-red-400 hover:bg-red-500 focus:outline-none cursor-default flex items-center justify-center ring-1 ring-black/10 ring-inset"
+    role="button"
+  >
+    <div
+      class="rounded-full bg-red-400 group-hover:bg-red-700 h-1 w-1"
+    />
+  </button>
+</div>
+`;
