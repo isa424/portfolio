@@ -6,7 +6,7 @@ export default function handler(
 	req: NextApiRequest,
 	res: NextApiResponse<IData>
 ) {
-	const data = `// Technologies and tools
+	const data = `// Socials
 // CTRL + Left Mouse Click
 const socials = [
 	"https://github.com/isa424",
