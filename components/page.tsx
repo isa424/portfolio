@@ -29,6 +29,7 @@ const Page: FC<IData> = (props) => {
 			theme={currentTheme}
 			defaultLanguage={'javascript'}
 			defaultValue={props.data}
+			loading={<div/>}
 		/>
 	);
 }
