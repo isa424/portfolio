@@ -1,24 +1,13 @@
-import type { GetServerSideProps, NextPage } from 'next'
-import Page, { IData } from '../components/page';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import type { NextPage } from 'next'
+import { faCode } from '@fortawesome/free-solid-svg-icons';
 
-const Home: NextPage<IData> = (props) => (
-	<Page data={props.data}/>
+const Home: NextPage = () => (
+	<div className='flex flex-col justify-center items-center text-gray-300 w-full mb-8'>
+		<FontAwesomeIcon icon={faCode} className='h-10 w-10'/>
+		<span>Open a file</span>
+		<span className='text-sm text-gray-500'>(Work in progress...)</span>
+	</div>
 );
-
-export const getServerSideProps: GetServerSideProps = async () => {
-	const url = process.env.NEXT_PUBLIC_URL + '/api/personal';
-	const response = await fetch(url);
-	let data = {};
-
-	if (response.ok) {
-		data = await response.json();
-	}
-
-	return {
-		props: {
-			...data,
-		},
-	};
-};
 
 export default Home;

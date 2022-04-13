@@ -12,7 +12,7 @@ export const Sidebar: FC = () => {
 	const router = useRouter();
 	const files = useMemo(() => {
 		return [
-			{name: 'personal.js', href: '/',},
+			{name: 'personal.js', href: '/personal',},
 			{name: 'technical.js', href: '/technical',},
 			{name: 'social.js', href: '/social'}
 		];
@@ -25,15 +25,13 @@ export const Sidebar: FC = () => {
 		setFilesOpen(!filesOpen);
 	}
 
-	const handleClick = (name: string) => setFile(name);
-
 	useEffect(() => {
 		const fileIndex = files.findIndex(f => f.href === router.pathname);
 
 		if (fileIndex > -1) {
 			setFile(files[fileIndex].name);
 		}
-	}, []);
+	}, [router.pathname]);
 
 	return (
 		<div className={'flex flex-col w-1/4 bg-slate-800 text-gray-300'}>
@@ -67,11 +65,10 @@ export const Sidebar: FC = () => {
 						<Link href={f.href} key={i}>
 							<button
 								role={'button'}
-								onClick={() => handleClick(f.name)}
 								className={'flex text-sm gap-2 items-center hover:bg-slate-700 hover:cursor-pointer px-3 py-0.5'}
 							>
 								<div className={'flex items-center justify-center'}>
-									<FontAwesomeIcon icon={faJsSquare} className={'text-yellow-500'}/>
+									<FontAwesomeIcon icon={faJsSquare} className={'text-yellow-500 h-4 w-4'}/>
 								</div>
 								<span>{f.name}</span>
 							</button>

@@ -8,9 +8,10 @@ export default function handler(
 ) {
 	const data = `// Technologies and tools
 // CTRL + Left Mouse Click
-const techs = [
+const socials = [
 	"https://github.com/isa424",
 	"https://www.linkedin.com/in/isa-ishangulyyev-195962105/",
+	"https://portfolio-isa424.vercel.app/",
 ];
 `;
 

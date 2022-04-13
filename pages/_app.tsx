@@ -8,13 +8,13 @@ type IContext = {
 	setFile: Dispatch<SetStateAction<string>>
 };
 
-const FileContext = createContext<IContext>({file: '', setFile: () => {}});
+const FileContext = createContext<IContext>({ file: '', setFile: () => { } });
 
-function MyApp({Component, pageProps}: AppProps) {
+function MyApp({ Component, pageProps }: AppProps) {
 	const [openFile, setOpenFile] = useState('');
 
 	return (
-		<FileContext.Provider value={{file: openFile, setFile: setOpenFile}}>
+		<FileContext.Provider value={{ file: openFile, setFile: setOpenFile }}>
 			<Layout>
 				<Component {...pageProps} />
 			</Layout>
