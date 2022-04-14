@@ -4,6 +4,8 @@
 /node_modules
 /.pnp
 .pnp.js
+.yarn/unplugged
+.yarn/build-state.yml
 
 # testing
 /coverage
