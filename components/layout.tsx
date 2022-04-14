@@ -2,6 +2,7 @@ import { FC, Fragment, PropsWithChildren, useMemo } from 'react';
 import { useAppContext } from '../pages/_app';
 import { Editor } from './editor';
 import Head from 'next/head';
+import styles from './layout.module.css';
 
 export const Layout: FC<PropsWithChildren<any>> = (props) => {
 	const { children } = props;
@@ -27,7 +28,7 @@ export const Layout: FC<PropsWithChildren<any>> = (props) => {
 				<link rel="canonical" href="https://portfolio-isa424.vercel.app/"></link>
 			</Head>
 
-			<div id={'layout'} className={'flex justify-center items-center h-full bg-[#0f223d]'}>
+			<div id={'layout'} className={`flex justify-center items-center h-full bg-[#0f223d] ${styles.layout}`}>
 				<Editor>
 					{children}
 				</Editor>
