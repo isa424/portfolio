@@ -1,6 +1,7 @@
 import { FC, PropsWithChildren, useMemo } from 'react';
 import { useAppContext } from '../pages/_app';
 import { Content } from './content';
+import { Footer } from './footer';
 import { Sidebar } from './sidebar';
 import { ToolbarButton } from './toolbar_button';
 
@@ -21,7 +22,7 @@ export const Editor: FC<PropsWithChildren<any>> = (props) => {
 			className={'w-full h-full md:w-[1024px] md:h-[600px] rounded-lg shadow-2xl flex flex-col overflow-hidden'}
 		>
 			{/* Top Toolbar */}
-			<div className={`flex items-center justify-between bg-gray-700/90 px-2 py-1.5 shadow`}>
+			<div className={`flex items-center justify-between bg-[#24292e] px-2 py-1.5 shadow`}>
 				<div className="flex gap-2 absolute">
 					<ToolbarButton type={'close'} />
 					<ToolbarButton type={'minimize'} />
@@ -45,6 +46,8 @@ export const Editor: FC<PropsWithChildren<any>> = (props) => {
 				</Content>
 			</div>
 
+			{/*	 Footer */}
+			<Footer/>
 		</div>
 	);
 }

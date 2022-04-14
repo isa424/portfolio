@@ -19,17 +19,17 @@ export const Content: FC<PropsWithChildren<any>> = (props) => {
 	}
 
 	return (
-		<main className={'flex flex-col w-3/4 bg-slate-800'}>
+		<main className={`flex flex-col w-3/4 ${file ? 'bg-[#1f2428]' : 'bg-[#24292e]'}`}>
 			{/* Tabs */}
 			<div className={'flex justify-start items-center text-sm text-gray-300'}>
 				<div
 					role={'button'}
-					className={`${file ? 'flex' : 'hidden'} items-center gap-1 bg-gray-700/90 hover:bg-slate-600/90 w-auto pl-3 py-2 pr-1`}
+					className={`${file ? 'flex' : 'hidden'} items-center gap-1 bg-[#24292e] w-auto pl-3 py-2 pr-1`}
 				>
 					<FontAwesomeIcon icon={faJsSquare} className={'text-yellow-500 h-4 w-4'}/>
 					<span>{file}</span>
 					<button
-						className={'flex items-center justify-center hover:bg-gray-500 p-0.5 rounded'}
+						className={'flex items-center justify-center hover:bg-gray-700 p-0.5 rounded'}
 						onClick={handleClose}
 					>
 						<XIcon className={'h-4 w-4'}/>
@@ -38,7 +38,7 @@ export const Content: FC<PropsWithChildren<any>> = (props) => {
 			</div>
 
 			{/* Content */}
-			<div className={'flex-1 flex bg-gray-700/90'}>
+			<div className={'flex-1 flex'}>
 				{children}
 			</div>
 		</main>

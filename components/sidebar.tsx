@@ -31,10 +31,10 @@ export const Sidebar: FC = () => {
 		if (fileIndex > -1) {
 			setFile(files[fileIndex].name);
 		}
-	}, [router.pathname]);
+	}, [router.pathname, files, setFile]);
 
 	return (
-		<div className={'flex flex-col w-1/4 bg-slate-800 text-gray-300'}>
+		<div className={'flex flex-col w-1/4 bg-[#1f2428] text-gray-300'}>
 			{/* Top */}
 			<div className={'flex w-full justify-between text-sm px-3 py-2'}>
 				<div>EXPLORER</div>
@@ -49,7 +49,7 @@ export const Sidebar: FC = () => {
 			<div className={'flex flex-col'}>
 				<button
 					role={'button'}
-					className={'flex items-center gap-1 px-1 py-1 bg-slate-700 text-xs font-bold'}
+					className={'flex items-center gap-1 px-1 py-1 bg-gray-700 text-xs font-bold'}
 					onClick={handleFilesOpen}
 				>
 					{filesOpen ? (
@@ -62,10 +62,10 @@ export const Sidebar: FC = () => {
 
 				<div className={`${filesOpen ? 'flex' : 'hidden'} flex-col`}>
 					{files.map((f, i) => (
-						<Link href={f.href} key={i}>
+						<Link href={f.href} key={i} passHref={true}>
 							<button
 								role={'button'}
-								className={'flex text-sm gap-2 items-center hover:bg-slate-700 hover:cursor-pointer px-3 py-0.5'}
+								className={'flex text-sm gap-2 items-center hover:bg-gray-700 hover:cursor-pointer px-3 py-0.5'}
 							>
 								<div className={'flex items-center justify-center'}>
 									<FontAwesomeIcon icon={faJsSquare} className={'text-yellow-500 h-4 w-4'}/>

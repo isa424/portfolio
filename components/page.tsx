@@ -1,9 +1,6 @@
-import { useMonaco } from '@monaco-editor/react';
+import File, { useMonaco } from '@monaco-editor/react';
 import { FC, useEffect, useState } from 'react';
 import { github_dark } from '../themes/github_dark';
-import dynamic from 'next/dynamic'
-
-const File = dynamic(() => import('@monaco-editor/react'), {ssr: false});
 
 export type IData = {
 	data: string
