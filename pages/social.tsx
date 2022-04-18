@@ -1,19 +1,13 @@
 import { GetServerSideProps, NextPage } from 'next';
 import Page, { IData } from '../components/page';
-import fetch from 'isomorphic-fetch';
+import socialFile from '../components/social';
 
 const Social: NextPage<IData> = (props) => (
 	<Page data={props.data}/>
 );
 
 export const getServerSideProps: GetServerSideProps<IData> = async () => {
-	const url = process.env.NEXT_PUBLIC_URL + '/api/social';
-	const response = await fetch(url);
-	let data: IData = {data: ''};
-
-	if (response.ok) {
-		data = await response.json();
-	}
+	let data: IData = {data: socialFile};
 
 	return {
 		props: {
